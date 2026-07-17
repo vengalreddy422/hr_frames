@@ -1,0 +1,66 @@
+/* Ultra-Wide Desktop */
+@media (min-width: 1920px) {
+  .container { max-width: 1600px; padding: 0 var(--space-4xl); }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .container { max-width: 1320px; padding: 0 var(--space-3xl); }
+}
+
+/* Desktop */
+@media (max-width: 1200px) {
+  .container { max-width: 960px; padding: 0 var(--space-2xl); }
+}
+
+/* Tablet Landscape */
+@media (max-width: 992px) {
+  .container { max-width: 720px; padding: 0 var(--space-xl); }
+  .grid-showcase { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+}
+
+/* Tablet Portrait */
+@media (max-width: 768px) {
+  .container { max-width: 540px; padding: 0 var(--space-lg); }
+  
+  /* Shrink Collection Cards slightly */
+  .card-gradient-glow, .card-gradient-glow > div:last-child { min-height: 280px !important; }
+  .card-gradient-glow > div:last-child { padding: var(--space-lg) !important; }
+  
+  /* Stack sections */
+  .contact-split-layout { grid-template-columns: 1fr !important; }
+  .section > .container > div[style*="gridTemplateColumns"] {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-xl) !important;
+  }
+}
+
+/* Phablet / Large Mobile */
+@media (max-width: 576px) {
+  .container { width: 100%; padding: 0 var(--space-md); }
+}
+
+/* Standard Mobile */
+@media (max-width: 480px) {
+  .grid-showcase { grid-template-columns: 1fr; }
+  .custom-frame-preview { min-height: 250px !important; }
+}
+
+/* Modern Phones (412px / 390px / 360px) */
+@media (max-width: 412px) {
+  .btn { width: 100%; padding: 14px 16px; font-size: 1rem; }
+}
+
+/* Small Phones (iPhone SE - 320px) */
+@media (max-width: 320px) {
+  h1 { font-size: 2rem !important; }
+  h2 { font-size: 1.6rem !important; }
+  .btn { padding: 12px; font-size: 0.9rem; }
+}
+
+/* Global Anti-Overflow */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+

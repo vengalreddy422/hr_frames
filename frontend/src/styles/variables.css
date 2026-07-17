@@ -1,0 +1,110 @@
+/* Fonts loaded via index.html preconnect for optimal performance */
+
+:root {
+  /* Font Family Scale */
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* Spacing Scale (8pt grid system) */
+  --space-2xs: 0.25rem;  /* 4px */
+  --space-xs: 0.5rem;    /* 8px */
+  --space-sm: 0.75rem;   /* 12px */
+  --space-md: 1.25rem;   /* 20px - increased for luxury */
+  --space-lg: 2rem;      /* 32px */
+  --space-xl: 3rem;      /* 48px */
+  --space-2xl: 4.5rem;   /* 72px */
+  --space-3xl: 6rem;     /* 96px */
+  --space-4xl: 8rem;     /* 128px */
+  --space-5xl: 12rem;    /* 192px */
+
+  /* Border Radius Scale */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
+
+  /* Ease Curves (Apple / Awwwards standard) */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-out-quint: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-elastic: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  --transition-fast: 250ms var(--ease-out-quint);
+  --transition-normal: 500ms var(--ease-out-quint);
+  --transition-slow: 800ms var(--ease-out-quint);
+
+  /* Shadows - Light Theme Default */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.08);
+  --shadow-xl: 0 40px 80px rgba(0, 0, 0, 0.12);
+  --shadow-glass: 0 16px 40px 0 rgba(31, 38, 135, 0.08);
+  --shadow-glow-primary: 0 8px 30px rgba(99, 102, 241, 0.3);
+  --shadow-glow-gold: 0 8px 30px rgba(245, 158, 11, 0.3);
+  
+  /* Gradients */
+  --gradient-gold: linear-gradient(135deg, #fcd34d 0%, #f59e0b 50%, #b45309 100%);
+  --gradient-sunset: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+  --gradient-ocean: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
+  --gradient-aurora: linear-gradient(135deg, #a855f7 0%, #6366f1 50%, #06b6d4 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%);
+  --gradient-glass-border: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.02) 100%);
+}
+
+[data-theme="light"] {
+  --bg-primary: #f5f5f7;       /* Apple light grey background */
+  --bg-secondary: #ffffff;     /* Flat white container background */
+  --bg-tertiary: #eaeaea;      /* Separator and input backgrounds */
+  
+  --text-primary: #1d1d1f;     /* Apple dark text */
+  --text-secondary: #6e6e73;   /* Secondary gray text */
+  --text-tertiary: #86868b;    /* Disabled text / Placeholder */
+  
+  --accent-primary: #1d1d1f;   /* Luxury brand dark primary */
+  --accent-secondary: #f59e0b; /* Gold */
+  --accent-success: #10b981;
+  --accent-warning: #f59e0b;
+  --accent-error: #ef4444;
+  
+  --interactive-hover: rgba(0, 0, 0, 0.04);
+  --interactive-active: rgba(0, 0, 0, 0.08);
+  --border-color: rgba(29, 29, 31, 0.08);
+  
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --glass-blur: blur(32px);
+}
+
+[data-theme="dark"], :root {
+  /* High-end luxury dark mode */
+  --bg-primary: #050507;       /* Deep obsidian black */
+  --bg-secondary: #0d0d12;     /* Subtle contrast container */
+  --bg-tertiary: #16161e;      /* Inputs */
+  
+  --text-primary: #ffffff;     /* Crisp white */
+  --text-secondary: #a1a1aa;   /* Cool grey */
+  --text-tertiary: #52525b;    /* Muted */
+  
+  --accent-primary: #ffc107;   /* Gold (Luxury accent) */
+  --accent-secondary: #e5e7eb; /* Silver */
+  --accent-success: #34d399;
+  --accent-warning: #ffc107;
+  --accent-error: #f87171;
+  
+  --interactive-hover: rgba(255, 255, 255, 0.06);
+  --interactive-active: rgba(255, 255, 255, 0.12);
+  --border-color: rgba(255, 255, 255, 0.08);
+  
+  --glass-bg: rgba(10, 10, 12, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: blur(32px);
+
+  /* Dramatic shadows for dark mode */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.8);
+  --shadow-xl: 0 40px 80px rgba(0, 0, 0, 0.95);
+  --shadow-glass: 0 16px 40px 0 rgba(0, 0, 0, 0.5);
+  --shadow-frame: 0 30px 60px rgba(0,0,0,0.8), inset 0 2px 15px rgba(255,255,255,0.05); /* Frame specific shadow */
+}
