@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import WhatsAppButton from './WhatsAppButton';
-
+import '../../styles/components/promo-video.css';
 export default function PromoVideoSection() {
   const videoRef = useRef(null);
   const [isMuted, setIsMuted] = useState(true);
@@ -18,18 +18,10 @@ export default function PromoVideoSection() {
   return (
     <section className="section" style={{ padding: '0 0 var(--space-3xl) 0' }}>
       <div className="container">
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', 
-          gap: 'var(--space-2xl)',
-          alignItems: 'center',
-          background: 'var(--bg-secondary)',
-          padding: 'var(--space-2xl)',
-          borderRadius: 'var(--radius-xl)'
-        }}>
+        <div className="promo-video-wrapper">
           
           {/* Left Side: Text and Order Button */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-md)', justifyContent: 'center' }}>
+          <div className="promo-video-content">
             <motion.h2 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -60,14 +52,14 @@ export default function PromoVideoSection() {
           </div>
 
           {/* Right Side: Video */}
-          <div style={{ position: 'relative', borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.3)' }}>
+          <div className="promo-video-container">
             <video 
               ref={videoRef}
               autoPlay 
               loop 
               muted={isMuted} 
               playsInline 
-              style={{ width: '100%', display: 'block', objectFit: 'cover' }}
+              className="promo-video-element"
             >
               <source src="/promo.mp4" type="video/mp4" />
             </video>
@@ -75,26 +67,8 @@ export default function PromoVideoSection() {
             {/* Sound Toggle Button */}
             <button 
               onClick={toggleSound}
-              style={{
-                position: 'absolute',
-                bottom: 'var(--space-md)',
-                right: 'var(--space-md)',
-                background: 'rgba(0,0,0,0.6)',
-                border: '1px solid rgba(255,255,255,0.2)',
-                color: '#fff',
-                width: 40,
-                height: 40,
-                borderRadius: '50%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer',
-                zIndex: 10,
-                transition: 'background 0.2s'
-              }}
+              className="promo-video-mute-btn"
               title={isMuted ? "Unmute Video" : "Mute Video"}
-              onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.9)'}
-              onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.6)'}
             >
               {isMuted ? (
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>

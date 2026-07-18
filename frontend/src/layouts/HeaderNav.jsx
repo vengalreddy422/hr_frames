@@ -6,7 +6,7 @@ import './HeaderNav.css';
 
 const NAV_LINKS = [
   { label: 'Home', to: '/' },
-  { label: 'Collections', to: '/collections', hasMega: true },
+  { label: 'Collections', to: '/collections' },
   { label: 'Frame Sizes', to: '/sizes' },
   { label: 'Gallery', to: '/gallery' },
   { label: 'Custom Frames', to: '/collection/customized-frames' },
@@ -17,8 +17,6 @@ const NAV_LINKS = [
 export default function HeaderNav() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const [megaOpen, setMegaOpen] = useState(false);
-  const closeTimer = useRef(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -29,16 +27,7 @@ export default function HeaderNav() {
 
   useEffect(() => {
     setIsMobileOpen(false);
-    setMegaOpen(false);
   }, [location.pathname]);
-
-  const openMega = () => {
-    clearTimeout(closeTimer.current);
-    setMegaOpen(true);
-  };
-  const closeMegaDelayed = () => {
-    closeTimer.current = setTimeout(() => setMegaOpen(false), 150);
-  };
 
   return (
     <header className={`nav-luxury ${isScrolled ? 'nav-scrolled' : ''}`}>
@@ -63,31 +52,13 @@ export default function HeaderNav() {
               <li
                 key={link.to}
                 className="nav-item"
-                onMouseEnter={link.hasMega ? openMega : undefined}
-                onMouseLeave={link.hasMega ? closeMegaDelayed : undefined}
-                style={{ position: link.hasMega ? 'relative' : undefined }}
               >
                 <Link
                   to={link.to}
                   className={`nav-link ${location.pathname === link.to ? 'active-link' : ''}`}
                 >
                   {link.label}
-                  {link.hasMega && <span style={{ marginLeft: 4, fontSize: '0.6rem' }}>▾</span>}
                 </Link>
-
-                {link.hasMega && megaOpen && (
-                  <div className="nav-mega" onMouseEnter={openMega} onMouseLeave={closeMegaDelayed}>
-                    {COLLECTIONS.map((c) => (
-                      <Link key={c.slug} to={`/collection/${c.slug}`} className="nav-mega-item">
-                        <span className="nav-mega-icon">{c.icon}</span>
-                        <span>
-                          <strong>{c.name}</strong>
-                          <small>{c.blurb}</small>
-                        </span>
-                      </Link>
-                    ))}
-                  </div>
-                )}
               </li>
             ))}
 
@@ -118,16 +89,6 @@ export default function HeaderNav() {
             {NAV_LINKS.map((link) => (
               <li key={link.to}>
                 <Link to={link.to} className="nav-mobile-link">{link.label}</Link>
-              </li>
-            ))}
-            <li>
-              <span className="nav-mobile-subheading">Shop by Collection</span>
-            </li>
-            {COLLECTIONS.map((c) => (
-              <li key={c.slug}>
-                <Link to={`/collection/${c.slug}`} className="nav-mobile-link nav-mobile-sublink">
-                  {c.icon} {c.name}
-                </Link>
               </li>
             ))}
             <li>
