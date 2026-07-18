@@ -118,7 +118,7 @@ export default function SizeCard({ size, index }) {
       </p>
       <WhatsAppButton
         size={size.label}
-        label={isCustom ? 'Request Custom Size' : 'Enquire Now'}
+        label={isCustom ? 'Request Custom Size' : 'Order Now'}
         className="btn btn-secondary btn-sm"
         fullWidth
       />
