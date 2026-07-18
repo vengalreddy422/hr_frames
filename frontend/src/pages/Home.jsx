@@ -82,17 +82,46 @@ export default function Home() {
                 THE ART OF FRAMING
               </motion.span>
               
-              <motion.h1 style={{ 
+              <h1 style={{ 
                 fontFamily: 'var(--font-display)', 
                 fontSize: 'clamp(3rem, 5vw, 5.5rem)', 
                 fontWeight: 800, 
                 letterSpacing: '-0.04em', 
                 lineHeight: 1.05,
-                margin: '0 0 var(--space-lg) 0',
-                color: 'var(--text-primary)'
+                margin: '0 0 var(--space-lg) 0'
               }}>
-                Your memories,<br />beautifully framed.
-              </motion.h1>
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                  style={{ color: 'var(--accent-warning)', display: 'inline-block', marginRight: '0.25em' }}
+                >
+                  HR
+                </motion.span>
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                  style={{ color: 'var(--text-primary)', display: 'inline-block', marginRight: '0.25em' }}
+                >
+                  FRAMES
+                </motion.span>
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                  style={{ 
+                    background: 'var(--gradient-ocean)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    color: 'transparent',
+                    display: 'inline-block'
+                  }}
+                >
+                  NELLORE
+                </motion.span>
+              </h1>
 
               <motion.p 
                 style={{ 
