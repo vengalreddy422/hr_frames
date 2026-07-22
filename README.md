@@ -109,11 +109,7 @@ To connect the frontend to your external backend and services, update the `.env`
 # Your Backend API URL (e.g., your Django server)
 VITE_API_BASE_URL=https://api.yourbackend.com/api
 
-# Your WhatsApp Business Number (Country code first, no plus sign)
-VITE_WHATSAPP_NUMBER=919999999999
 
-# Your Cloudinary Cloud Name
-VITE_CLOUDINARY_CLOUD_NAME=your_cloud_name
 ```
 
 ---
